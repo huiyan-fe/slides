@@ -1,0 +1,11 @@
+var fs = require('fs');
+
+function* flow(){
+    var file1 = yield fs.readFile('1.text');
+    var file2 = yield fs.readFile('2.text');
+    console.log(file1,file2)
+}
+
+var gen = flow();
+gen.next();
+gen.next();
