@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello React</title>
+    <script src="./js/lib/react.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/jsx">
+
+    var HelloWorld = React.createClass({
+      render: function() {
+        return (
+          <p>
+            Hello, <input type="text" placeholder="Your name here" />!
+            It is {this.props.date.toTimeString()}
+          </p>
+        );
+      }
+    });
+
+    setInterval(function() {
+      React.render(
+        <HelloWorld date={new Date()} />,
+        document.getElementById('example')
+      );
+    }, 500);
+
+    </script>
+  </body>
+</html>
